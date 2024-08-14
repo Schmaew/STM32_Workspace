@@ -1,0 +1,8 @@
+red.pwm
+red.pinGroup -> IDR
+red.pinGroup -> IDR & red.pin
+(red.pinGroup -> IDR & red.pin) >> 10
+pwm
+pwmR
+pwmG
+pwmB

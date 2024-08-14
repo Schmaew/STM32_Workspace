@@ -1,0 +1,24 @@
+13:15:25 **** Incremental Build of configuration Debug for project UART ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:136:36: warning: '%s' directive writing up to 99 bytes into a region of size 91 [-Wformat-overflow=]
+  136 |       sprintf(tx_buffer, "UART3 => %s\n", rx_buffer2);
+      |                                    ^~     ~~~~~~~~~~
+../Core/Src/main.c:136:7: note: 'sprintf' output between 11 and 110 bytes into a destination of size 100
+  136 |       sprintf(tx_buffer, "UART3 => %s\n", rx_buffer2);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "UART.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/paul/STM32CubeIDE/workspace_1.16.0/UART/STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART.elf
+ 
+arm-none-eabi-size  UART.elf 
+arm-none-eabi-objdump -h -S UART.elf  > "UART.list"
+   text	   data	    bss	    dec	    hex	filename
+  23920	    104	   3736	  27760	   6c70	UART.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART.list
+ 
+
+13:15:25 Build Finished. 0 errors, 1 warnings. (took 427ms)
+
