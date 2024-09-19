@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := SpecialCase-01-B02
+BUILD_ARTIFACT_NAME := SpecialCase-01-B
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-SpecialCase-01-B02.elf \
+SpecialCase-01-B.elf \
 
 MAP_FILES += \
-SpecialCase-01-B02.map \
+SpecialCase-01-B.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-SpecialCase-01-B02.list \
+SpecialCase-01-B.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: SpecialCase-01-B02.elf secondary-outputs
+main-build: SpecialCase-01-B.elf secondary-outputs
 
 # Tool invocations
-SpecialCase-01-B02.elf SpecialCase-01-B02.map: $(OBJS) $(USER_OBJS) /home/paul/STM32CubeIDE/workspace_1.16.0/KMITL-2023-S1-Microcontroller-main.zip_expanded/KMITL-2023-S1-Microcontroller-main/SpecialCase-01-B02/STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "SpecialCase-01-B02.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/paul/STM32CubeIDE/workspace_1.16.0/KMITL-2023-S1-Microcontroller-main.zip_expanded/KMITL-2023-S1-Microcontroller-main/SpecialCase-01-B02/STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SpecialCase-01-B02.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SpecialCase-01-B.elf SpecialCase-01-B.map: $(OBJS) $(USER_OBJS) /home/paul/STM32CubeIDE/workspace_1.16.0/SpecialCase-01-B/STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "SpecialCase-01-B.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/paul/STM32CubeIDE/workspace_1.16.0/SpecialCase-01-B/STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SpecialCase-01-B.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-SpecialCase-01-B02.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "SpecialCase-01-B02.list"
+SpecialCase-01-B.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "SpecialCase-01-B.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) SpecialCase-01-B02.elf SpecialCase-01-B02.list SpecialCase-01-B02.map default.size.stdout
+	-$(RM) SpecialCase-01-B.elf SpecialCase-01-B.list SpecialCase-01-B.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

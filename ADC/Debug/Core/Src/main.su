@@ -1,0 +1,9 @@
+../Core/Src/main.c:65:5:average_8	16	static
+../Core/Src/main.c:80:5:average_16	16	static
+../Core/Src/main.c:95:7:map_value	32	static
+../Core/Src/main.c:107:7:displayHEX	160	static
+../Core/Src/main.c:117:6:controlLEDs	16	static
+../Core/Src/main.c:153:5:main	24	static
+../Core/Src/main.c:214:6:SystemClock_Config	88	static
+../Core/Src/main.c:257:6:MPU_Config	24	static
+../Core/Src/main.c:288:6:Error_Handler	4	static,ignoring_inline_asm

@@ -1,0 +1,9 @@
+../Core/Src/main.c:65:5:average_8	2
+../Core/Src/main.c:80:5:average_16	2
+../Core/Src/main.c:95:7:map_value	1
+../Core/Src/main.c:107:7:displayHEX	1
+../Core/Src/main.c:117:6:controlLEDs	5
+../Core/Src/main.c:153:5:main	2
+../Core/Src/main.c:214:6:SystemClock_Config	3
+../Core/Src/main.c:257:6:MPU_Config	1
+../Core/Src/main.c:288:6:Error_Handler	1
